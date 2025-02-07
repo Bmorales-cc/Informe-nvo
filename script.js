@@ -21,3 +21,21 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.setItem('theme', newTheme);
     });
   });
+  document.addEventListener('DOMContentLoaded', function () {
+    // Seleccionar el botón y la sección de GIFs
+    const toggleGifsButton = document.getElementById('toggleGifs');
+    const gifSection = document.getElementById('gifSection');
+  
+    // Manejar el clic en el botón
+    if (toggleGifsButton && gifSection) {
+      toggleGifsButton.addEventListener('click', function () {
+        if (gifSection.style.display === 'none' || gifSection.style.display === '') {
+          gifSection.style.display = 'block'; // Mostrar la sección
+          toggleGifsButton.textContent = 'Ocultar Presentaciones'; // Cambiar texto del botón
+        } else {
+          gifSection.style.display = 'none'; // Ocultar la sección
+          toggleGifsButton.textContent = 'Ver Presentaciones'; // Cambiar texto del botón
+        }
+      });
+    }
+  });
