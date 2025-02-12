@@ -1,19 +1,19 @@
 :root {
-  --bg-color: #f4f4f9;
+  --bg-color: #eeecec;
   --text-color: #333;
-  --header-color: #6200ea; /* Color del header en modo claro */
-  --button-bg-color: #6200ea;
+  --header-color: #0b011a; /* Color del header en modo claro */
+  --button-bg-color: #0b011a;
   --button-text-color: white;
-  --button-hover-bg-color: #3700b3;
+  --button-hover-bg-color: #0b011a;
 }
 
 [data-theme="dark"] {
   --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --header-color: #bb86fc; /* Color del header en modo oscuro (mismo que los botones) */
-  --button-bg-color: #bb86fc;
-  --button-text-color: #121212;
-  --button-hover-bg-color: #9a67ea;
+  --text-color: #121212;
+  --header-color: #121212; 
+  --button-bg-color: #dfdfdf;
+  --button-text-color: #dadada;
+  --button-hover-bg-color: #dfdfdf;
 }
 
 body {
@@ -29,7 +29,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--header-color); /* Usa la variable para el color del header */
   color: white;
   padding: 1rem 0;
   position: relative;
@@ -118,7 +117,34 @@ h2 {
 
 /* Efecto hover para los párrafos en modo oscuro */
 [data-theme="dark"] .chapter-content p:hover {
-  box-shadow: 0 8px 16px rgba(187, 134, 252, 0.4); /* Morado claro */
+  box-shadow: 0 8px 16px rgba(252, 252, 252, 0.4); /* Morado claro */
+}
+
+/* Colores para los párrafos en modo claro y oscuro */
+:root {
+  --paragraph-bg-color: #ffffff;
+  --paragraph-border-color: #e0e0e0;
+}
+
+.chapter-content p {
+  background-color: var(--paragraph-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--paragraph-border-color);
+}
+
+/* Efecto hover para los párrafos en modo claro */
+.chapter-content p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto hover para los párrafos en modo oscuro */
+[data-theme="dark"] .chapter-content p:hover {
+  box-shadow: 0 8px 16px rgba(244, 244, 245, 0.4); /* Morado claro */
 }
 
 /* Colores para los párrafos en modo claro y oscuro */
@@ -131,7 +157,7 @@ h2 {
   --paragraph-bg-color: #1e1e1e;
   --paragraph-border-color: #333333;
 }
-/* Estilos para el botón de GIFs */
+
 .gif-button {
   display: block;
   margin: 20px auto;
@@ -149,7 +175,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Estilos para la sección de GIFs (oculta inicialmente) */
 .gif-section {
   display: none; /* Oculto por defecto */
   margin-top: 20px;
@@ -160,12 +185,6 @@ h2 {
   text-align: center;
 }
 
-.gif-section h3 {
-  margin-bottom: 15px;
-  color: var(--text-color);
-}
-
-/* Contenedor de GIFs */
 .gif-container {
   display: flex;
   justify-content: center;
@@ -173,7 +192,6 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* Estilos para cada GIF */
 .gif {
   max-width: 100%;
   height: auto;
@@ -184,4 +202,124 @@ h2 {
 
 .gif:hover {
   transform: scale(1.05);
+}
+
+/* Fondo solo en la página de inicio */
+body.home .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('gifs/fondo.jpg') no-repeat center center/cover;
+  z-index: -1;
+  animation: zoomIn 10s ease-in-out infinite alternate;
+}
+
+/* Asegura que el contenido sea desplazable */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Efecto de zoom suave */
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Estilos para el header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--header-color);
+  color: white;
+  padding: 1rem 0;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+/* Estilos para los botones */
+.button {
+  text-decoration: none;
+  padding: 10px 20px;
+  background: var(--button-bg-color);
+  color: var(--button-text-color);
+  border-radius: 5px;
+  transition: transform 0.2s, background-color 0.3s;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Variables para el tema claro y oscuro */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --header-color: rgba(98, 0, 234, 0.8);
+  --button-bg-color: rgba(98, 0, 234, 0.8);
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: rgba(55, 0, 179, 0.9);
+}
+
+[data-theme="dark"] {
+  --bg-color: #000000;
+  --text-color: #e0e0e0;
+  --header-color: rgba(187, 134, 252, 0.8);
+  --button-bg-color: rgba(187, 134, 252, 0.8);
+  --button-text-color: #000000;
+  --button-hover-bg-color: rgba(154, 103, 234, 0.9);
+}
+
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para el header */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--header-color);
+  color: rgba(255, 255, 255, 0.945);
+  padding: 1rem 0;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s;
+}
+
+
+
+/* Estilos para el botón de cambio de tema */
+#themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
 }
