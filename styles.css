@@ -107,6 +107,9 @@ h2 {
   margin: 20px 0;
   transition: transform 0.3s, box-shadow 0.3s;
   border: 1px solid var(--paragraph-border-color);
+  line-height: 1.6; /* Mejora la legibilidad */
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
+  text-align: justify; /* Texto justificado */
 }
 
 /* Efecto hover para los párrafos en modo claro */
@@ -285,7 +288,6 @@ header {
   --button-hover-bg-color: rgba(154, 103, 234, 0.9);
 }
 
-
 /* Estilos generales */
 body {
   font-family: Arial, sans-serif;
@@ -308,7 +310,6 @@ header {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
 }
-
 
 
 /* Estilos para el botón de cambio de tema */
