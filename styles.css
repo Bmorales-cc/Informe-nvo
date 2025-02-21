@@ -18,8 +18,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
@@ -59,7 +59,7 @@ header {
 
 .button:hover {
   transform: scale(1.1);
-  background-color: var(--button-hover-bg-color);
+  background-color: var();
 }
 
 h2 {

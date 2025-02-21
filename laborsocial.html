@@ -49,10 +49,24 @@ En la sección de <b>"Ver Presentaciones"</b>, se encuentran adjuntas algunas fo
       <img src="gifs/labor2.gif" alt="presentación 8" class="gif">
     </div>
   </div>
+
+  <!-- Botón para descargar el archivo de Word -->
+  <button id="downloadWordFile" class="button">Archivo de Word</button>
+
+  <!-- Enlace oculto para la descarga -->
+  <a id="hiddenDownloadLink" href="gifs/Informe-labor.docx" download style="display: none;"></a>
 </div>
       <div class="navigation-buttons">
         <a href="capitulo4.html" class="button">Anterior Capítulo</a>
       </div>
   </main>
+
+  <script>
+    // Script para manejar la descarga del archivo de Word
+    document.getElementById('downloadWordFile').addEventListener('click', function() {
+      const hiddenDownloadLink = document.getElementById('hiddenDownloadLink');
+      hiddenDownloadLink.click(); // Simula un clic en el enlace oculto
+    });
+  </script>
 </body>
 </html>
